@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
+
+body {
+    background-color: #b20405;
+    color: white;
+    font-family: "Francois One", sans-serif  ;
+}
+
+p {
+    font-family:"Tuffy", sans-serif ;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    font-family:"Tuffy", sans-serif;
+    border-radius: 10px ;
+    border: 2px solid black;
+    font-size: 15px;
+}
+
+select {
+    font-size: 15px;
+    width: 300px;
+    padding: 10px;
+    font-family:"Tuffy", sans-serif;
+    border-radius: 10px ;
+    border: 2px solid black; 
+}
+
+textarea {
+    width: 800px;
+    height: 80px;
+    padding: 10px;
+    font-family:"Tuffy", sans-serif;
+    font-size: 15px;
+    border-radius: 10px ;
+    border: 2px solid black; 
+}
+
+
+button {
+    background-color: black;
+    color: antiquewhite;
+    font-size: 16px;
+    font-family: "Francois One", sans-serif  ;
+    border-radius: 10px; 
+    padding: 10px 10px; 
+    border: none;
+    
+}
+
+button:hover {
+    font-size: 21px;
+    color: black;
+    background-color: white;
+}
+
+.btnlog {
+    margin-top: 10px;
+}
+
+
+
+.tarjeta-reserva {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #740404;
+}
+
+
+
+
