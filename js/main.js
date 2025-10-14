@@ -37,10 +37,10 @@ btnreserva.addEventListener ( "click" , () => {
 
     localStorage.setItem("reservas", JSON.stringify(reservas))
 
-    nombre.value = "";
-    visita.value = "";
-    hora.value = "";
-    problema.value = "";
+    nombre.value = ""
+    visita.value = ""
+    hora.value = ""
+    problema.value = ""
 
 
 

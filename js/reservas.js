@@ -1,6 +1,6 @@
-let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+let reservas = JSON.parse(localStorage.getItem("reservas")) || []
 
-const contenedor = document.getElementById("contenedor-reservas");
+const contenedor = document.getElementById("contenedor-reservas")
 
 const crearnuevo = document.getElementById ("crearreserva")
 
@@ -37,7 +37,7 @@ function mostrarReservas() {
     
 }
 
-mostrarReservas();
+mostrarReservas()
 
 
 borrarbtn.addEventListener ("click" , () => {
