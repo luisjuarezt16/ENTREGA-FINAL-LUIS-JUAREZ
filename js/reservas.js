@@ -4,7 +4,7 @@ const contenedor = document.getElementById("contenedor-reservas")
 
 const crearnuevo = document.getElementById ("crearreserva")
 
-const borrarbtn = document.getElementById ("borrartodo")
+const borrartodo = document.getElementById ("borrartodo")
 
 
 
@@ -30,20 +30,38 @@ function mostrarReservas() {
                     <p>Fecha: ${r.fecha}</p>
                     <p>Hora: ${r.hora}</p>
                     <p>Problema: ${r.problema}</p>
-                    </div>
+                    <button type="button" id="btnborrar-${i}" class="btnlog col-lg-4 mb-5">BORRAR RESERVA</button>
+                </div>
 
         `
     })
+
+
+    for (let i = 0; i < reservas.length; i++) {
+        const botonBorrar = document.getElementById(`btnborrar-${i}`)
+        const botonEditar = document.getElementById(`btneditar-${i}`)
+
+        botonBorrar.addEventListener("click", () => {
+        let nuevasReservas = []
+        for (let j = 0; j < reservas.length; j++) {
+            if (j !== i) {
+            nuevasReservas.push(reservas[j])
+            }
+        }
+
+        reservas = nuevasReservas
+        localStorage.setItem("reservas", JSON.stringify(reservas))
+        mostrarReservas()
+        })
+
+
+    }
+
     
 }
 
 mostrarReservas()
 
 
-borrarbtn.addEventListener ("click" , () => {
 
-    localStorage.removeItem("reservas")
-    reservas = []
-    mostrarReservas(reservas)
-})
 

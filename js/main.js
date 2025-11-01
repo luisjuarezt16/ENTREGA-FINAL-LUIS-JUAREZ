@@ -8,6 +8,8 @@ const btnreserva = document.getElementById ("btnreservar")
 const btnlog = document.getElementById ("btnlog")
 
 
+
+
 btnlog.addEventListener ("click", ()=> {
    
     location.href = "./pages/login.html"
@@ -26,11 +28,6 @@ btnreserva.addEventListener ( "click" , () => {
         problema: problema.value,
     }
 
-
-    const existe = reservas.some(r => r.fecha === reserva.fecha && r.hora === reserva.hora)
-    if (existe) {
-        return
-    }
     
 
     reservas.push (reserva)
