@@ -21,10 +21,6 @@ fecha.value = reserva.fecha
 problema.value = reserva.problema
 
 btnreserva.addEventListener('click', () => {
-  location.href = './reservas.html'
-})
-
-btnreserva.addEventListener('click', () => {
   const reserva = {
     empresa: nombre.value,
     fecha: fecha.value,
@@ -44,5 +40,19 @@ btnreserva.addEventListener('click', () => {
   hora.value = ''
   problema.value = ''
 
-  location.href = './reservas.html'
+  Swal.fire({
+    title: "¡TU RESERVA FUE EDITADA!",
+    text: "Puedes volver a editarla si lo deseas.",
+    icon: "success",
+    confirmButtonColor: "#000000",
+    background: "#330000",
+    color: "#ffffff",
+
+  }).then(() => {
+    location.href = './reservas.html'
+  })
+
+  
+
+
 })

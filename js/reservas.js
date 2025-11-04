@@ -34,22 +34,75 @@ function mostrarReservas() {
     const botonEditar = document.getElementById(`btneditar-${i}`);
 
     botonBorrar.addEventListener('click', () => {
-      let nuevasReservas = [];
-      for (let j = 0; j < reservas.length; j++) {
-        if (j !== i) {
-          nuevasReservas.push(reservas[j]);
-        }
-      }
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Esta acción eliminará la reserva permanentemente.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí, borrar",
+        cancelButtonText: "Cancelar",
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#d33",
+        background: "#330000",
+        color: "#ffffff"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          let nuevasReservas = []
+          for (let j = 0; j < reservas.length; j++) {
+            if (j !== i) {
+              nuevasReservas.push(reservas[j])
+            }
+          }
 
-      reservas = nuevasReservas;
-      localStorage.setItem('reservas', JSON.stringify(reservas));
-      mostrarReservas();
-    });
+          reservas = nuevasReservas
+          localStorage.setItem('reservas', JSON.stringify(reservas))
+          mostrarReservas()
+
+          Swal.fire({
+            title: "¡Reserva eliminada!",
+            text: "La reserva fue borrada correctamente.",
+            icon: "success",
+            confirmButtonColor: "#000000",
+            background: "#330000",
+            color: "#ffffff",
+            timer: 2000,
+            showConfirmButton: false
+          })
+        }
+      })
+    })
+
 
     botonEditar.addEventListener('click', () => {
-      localStorage.setItem('reservaElegida', i);
-      location.href = '../pages/editar.html';
-    });
+      Swal.fire({
+        title: "¿Deseas editar esta reserva?",
+        text: "Serás redirigido al formulario de edición.",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Sí, editar",
+        cancelButtonText: "Cancelar",
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#d33",
+        background: "#330000",
+        color: "#ffffff"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          localStorage.setItem('reservaElegida', i)
+          Swal.fire({
+            title: "Redirigiendo...",
+            text: "Abriendo el formulario de edición.",
+            icon: "info",
+            showConfirmButton: false,
+            timer: 1000,
+            background: "#330000",
+            color: "#ffffff"
+          })
+          setTimeout(() => {
+            location.href = '../pages/editar.html'
+          }, 1500)
+        }
+      })
+    })
   }
 }
 

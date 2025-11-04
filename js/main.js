@@ -28,6 +28,21 @@ btnreserva.addEventListener ( "click" , () => {
         problema: problema.value,
     }
 
+    const existe = reservas.some(r => r.fecha === reserva.fecha && r.hora === reserva.hora)
+                                                
+
+    if (existe) {
+    Swal.fire({
+      title: "¡Fecha ya reservada!",
+      text: "Ya existe una reserva registrada para esa fecha y hora.",
+      icon: "warning",
+      confirmButtonColor: "#000000",
+      background: "#330000",
+      color: "#ffffff"
+    })
+    return 
+    }
+
     
 
     reservas.push (reserva)
@@ -39,7 +54,18 @@ btnreserva.addEventListener ( "click" , () => {
     hora.value = ""
     problema.value = ""
 
+    
+
+    Swal.fire({
+    title: "TU RESERVA FUE REGISTRADA!",
+    text: "Puedes ingresar a tu cuenta y borrar o editar tu reserva.",
+    icon: "success",
+    confirmButtonColor: "#000000ff",
+    background: "#330000ff",
+    color: "#ffffffff",  
+    });
 
 
-} )
+
+})
 
