@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "usuario": "admin",
+        "contraseña": 12345
+
+    },
+
+    {
+        "id": 2,
+        "usuario": "luisjuarez",
+        "contraseña": 16112002
+
+    },
+    
+    {
+        "id": 3,
+        "usuario": "jesuscoder",
+        "contraseña": 12345
+
+    },
+
+    {
+        "id": 4,
+        "usuario": "dianacoder",
+        "contraseña": 54321
+
+    },
+
+    {
+        "id": 5,
+        "usuario": "admincoder",
+        "contraseña": 12345
+
+    },
+
+        {
+        "id": 6,
+        "usuario": "jordanmendez",
+        "contraseña": 12345
+
+    },
+
+
+    {
+        "id": 6,
+        "usuario": "richelvargas",
+        "contraseña": 54321
+
+    }
+
+
+]
